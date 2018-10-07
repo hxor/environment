@@ -1,0 +1,36 @@
+#PHP 5.6
+server {
+	listen 80;
+
+	root /var/www/php56;
+	index index.php;
+	server_name php56.example.com;
+
+	location ~* \.php$ {
+		# With php-fpm unix sockets
+		fastcgi_pass unix:/var/run/php/php5.6-fpm.sock;
+		include         fastcgi_params;
+		fastcgi_param   SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+		fastcgi_param   SCRIPT_NAME        $fastcgi_script_name;
+	}
+}
+
+#PHP 7.1
+server {
+	listen 80;
+
+	root /var/www/php71;
+	index index.php;
+	server_name php71.example.com;
+
+	location ~* \.php$ {
+		# With php-fpm unix sockets
+		fastcgi_pass unix:/var/run/php/php7.1-fpm.sock;
+		include         fastcgi_params;
+		fastcgi_param   SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+		fastcgi_param   SCRIPT_NAME        $fastcgi_script_name;
+	}
+}
+
+
+#https://tecadmin.net/install-multiple-php-version-nginx-ubuntu/
