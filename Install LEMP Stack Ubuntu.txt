@@ -30,6 +30,9 @@ sudo nano /etc/php/7.1/fpm/php.ini
 Uncomment and put 0  value in cgi.fix_pathinfo:
 cgi.fix_pathinfo=0
 
+Restart FPM:
+sudo systemctl restart php7.1-fpm
+
 Raspbian:
 PHP 5.6:
 sudo apt-get install -t stretch php5.6 php5.6-curl php5.6-gd php5.6-fpm php5.6-cli php5.6-opcache php5.6-mbstring php5.6-gettext php5.6-mcrypt php5.6-memcached php5.6-xml php5.6-mysql php5.6-zip
@@ -47,6 +50,9 @@ Backup:
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
 
 Change With PHP Default Nginx File or Laravel Virtual Host File
+And make symlink in sites-enabled nginx directory:
+
+sudo ln -s /etc/nginx/sites-default /etc/nginx/site-enabled
 
 sudo systemctl reload nginx
 
