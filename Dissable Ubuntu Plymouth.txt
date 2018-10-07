@@ -1,0 +1,5 @@
+Edit /etc/default/grub 
+(using gksu gedit /etc/default/grub), 
+and remove the "quiet splash" from the Linux command line.
+
+After this run sudo update-grub2

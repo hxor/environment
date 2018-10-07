@@ -1,0 +1,7 @@
+make dir in home
+
+.fonts
+
+then command this:
+fc-cache -f -v
+

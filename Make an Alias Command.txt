@@ -1,0 +1,21 @@
+cd ~
+BASH:
+cp .bashrc .bashrc.old 
+gedit .bashrc
+
+ZSH:
+cp .zshrc .zshrc.old 
+gedit .zshrc
+
+alias alias_anda='perintah_asli'
+
+alias update='sudo apt-get update'
+
+source ~/.bashrc
+
+sudo /opt/lampp/lampp start
+
+
+alias xlampp='sudo /opt/lampp/lampp start'
+alias rlampp='sudo /opt/lampp/lampp restart'
+alias slampp='sudo /opt/lampp/lampp stop'
