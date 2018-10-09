@@ -52,7 +52,7 @@ sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.ba
 Change With PHP Default Nginx File or Laravel Virtual Host File
 And make symlink in sites-enabled nginx directory:
 
-sudo ln -s /etc/nginx/sites-default /etc/nginx/site-enabled
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/site-enabled
 
 sudo systemctl reload nginx
 
