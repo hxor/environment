@@ -79,6 +79,26 @@ sudo update-alternatives --set php /usr/bin/php5.6
 
 PROBLEM:
 
+Adding Root Password
+In MySQL 5.7, the password field in mysql.user table field was removed, now the field name is authentication_string.
+
+First choose the database:
+mysql> use mysql;
+
+And then show the tables:
+mysql> show tables;
+
+You will find the user table, and see its fields:
+mysql> describe user;
+
+You will realize there is no field named password, the password field is named authentication_string. So, just do this:
+update user set authentication_string=password('XXXX') where user='root';
+
+As suggested by @Rui F Ribeiro, alternatively you can run:
+mysql> SET PASSWORD FOR 'root' = PASSWORD('new_password');
+
+##################
+
 sudo mysql -u root
 use mysql;
 
